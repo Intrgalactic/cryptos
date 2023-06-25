@@ -48,6 +48,10 @@ button {
   border:none;
   font-size:1.1em;
 }
+button a {
+  color:black;
+  -webkit-text-fill-color: black;
+}
 button:hover {
   cursor: pointer;
 }
