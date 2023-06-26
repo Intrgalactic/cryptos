@@ -1,11 +1,12 @@
 import logo from 'assets/images/logo.png';
 import Nav from './nav';
-
+import { motion } from 'framer-motion';
+import { animateVariant } from 'pages/home';
 export default function Header() {
     return (
-        <header>
+        <motion.header variants={animateVariant} animate="visible" initial="hidden">
             <img src={logo} alt="company logo"/>
             <Nav/>
-        </header>
+        </motion.header>
     )
 }
