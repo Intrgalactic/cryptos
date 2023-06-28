@@ -527,6 +527,7 @@ footer h3 {
   color:white;
   font-size:2em;
   text-transform: uppercase;
+
 }
 .pricing__subscription-type,.pricing__box-abilities-record {
   text-shadow: 1px 1px 0 #000,
@@ -571,8 +572,6 @@ footer h3 {
   margin-inline:10%;
   justify-content: space-around;
   color:white;
-  -webkit-text-stroke: 4px black;
-  paint-order: stroke fill;
   font-family:Roboto-Bold;
   margin-bottom: 20px;
 }
