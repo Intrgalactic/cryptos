@@ -528,6 +528,7 @@ footer h3 {
   font-size:2em;
   text-transform: uppercase;
   -webkit-text-stroke:4px black;
+  -webkit-paint-order: stroke fill;
   paint-order: stroke fill;
 }
 .pricing__box {
