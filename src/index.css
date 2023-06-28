@@ -527,6 +527,8 @@ footer h3 {
   color:white;
   font-size:2em;
   text-transform: uppercase;
+}
+.pricing__subscription-type,.pricing__box-abilities-record {
   text-shadow: 1px 1px 0 #000,
     -1px 1px 0 #000,
     1px -1px 0 #000,
