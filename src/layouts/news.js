@@ -17,7 +17,7 @@ export default function News() {
                 <NewsBox image={firstNewsImage} alt="nasdaq session news presentation" heading="LATEST NASDAQ SESSION" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
                 <NewsBox image={secondNewsImage} alt="altcoin recession presentation" heading="ALTCOIN RECESSION" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
             </div>
-            <MoveArrows parent={newsRef}/>
+            <MoveArrows ref={newsRef}/>
         </section>
     )
 }

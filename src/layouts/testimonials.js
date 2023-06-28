@@ -28,7 +28,7 @@ export default function Testimonials() {
                 <TestimonialBox name="keiran" lastname="sea" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
                 <TestimonialBox name="marie" lastname="bali" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
             </motion.section>
-            <MoveArrows parent={testimonialsRef}/>
+            <MoveArrows ref={testimonialsRef}/>
         </>
     )
 }

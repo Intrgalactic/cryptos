@@ -1,10 +1,10 @@
 import moveArr from 'assets/images/news-move-arrow.png';
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
 
-export function MoveArrows({ parent }) {
+export const MoveArrows = forwardRef((props, ref) => {
     const [scrollCount, setScrollCount] = useState(0);
     function scrollToElement(e) {
-        const elementsToScroll = parent.current.childNodes;
+        const elementsToScroll = ref.current.childNodes;
         if (scrollCount - 1 < 0 && e.target.classList.contains("left-move-arrow")) {
             elementsToScroll[elementsToScroll.length - 1].scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
             setScrollCount(elementsToScroll.length - 1);
@@ -24,4 +24,4 @@ export function MoveArrows({ parent }) {
             <img src={moveArr} alt="move arrow" onClick={(e) => { scrollToElement(e) }} className="right-move-arrow" />
         </div>
     )
-}
+})

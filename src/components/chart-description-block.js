@@ -5,7 +5,7 @@ export function ChartDescriptionBlock({heading,description,btnText}) {
         <div className="chart-block__description">
             <h1 className="chart-block__description-heading">{heading}</h1>
             <p className="chart-block__description-description">{description}</p>
-            <CtaBtn btnText={btnText}/>
+            {btnText ? <CtaBtn btnText={btnText}/> : null}
         </div>
     )
 }
