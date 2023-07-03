@@ -1,6 +1,5 @@
 
 export function NavBtn({ toggleNav, toggle }) {
-    console.log(toggle);
     return (
         <button className="nav-btn" onClick={toggleNav}>
             {toggle ?

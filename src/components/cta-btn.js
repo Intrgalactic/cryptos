@@ -1,6 +1,6 @@
 
-export function CtaBtn({btnText}) {
+export function CtaBtn({btnText,action}) {
     return (
-        <button className="cta-btn">{btnText}</button>
+        <button className="cta-btn" onClick={action}>{btnText}</button>
     )
 }

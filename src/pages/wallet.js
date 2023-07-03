@@ -11,11 +11,14 @@ import swapDescription from 'assets/images/swap-description.png';
 import launchpadDescription from 'assets/images/launchpad-description.png';
 import WalletTestimonials from "layouts/wallet-testimonials";
 import Footer from "layouts/footer";
+import Loader from "layouts/loader";
+import useLoader from "hooks/useLoader";
 
-export default function Wallet() {
+export default function Wallet({isLoading,setIsLoading}) {
+    useLoader(setIsLoading);
     return (
         <>
-            <div className="wallet-header"><Header/></div>
+            <div className="wallet-header"><Header /></div>
             <div className="wallet-app">
                 <SectionHeading heading={["CHOOSE YOUR OPTION TO FLY THE SKY"]} />
                 <SectionHeadingDescription description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
@@ -31,6 +34,8 @@ export default function Wallet() {
                 <WalletTestimonials />
                 <Footer />
             </div>
+            {isLoading &&
+                <Loader />}
         </>
     )
 }

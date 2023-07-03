@@ -14,6 +14,8 @@ import earnFromZero from 'assets/images/earn-from-zero.png';
 import scalableInterface from 'assets/images/scalable-interface.png';
 import { CtaBtn } from "components/cta-btn";
 import { SectionHeading } from "components/section-heading";
+import Loader from "layouts/loader";
+import useLoader from "hooks/useLoader";
 export const animateVariant = {
     visible: {
         opacity: 1,
@@ -28,12 +30,13 @@ export const animateVariant = {
     },
 
 }
-export default function Home() {
+export default function Home({isLoading,setIsLoading}) {
+    useLoader(setIsLoading);
     return (
         <>
             <Header />
             <Hero />
-            <SectionHeading heading={["stop focusing on things which", <br/>,"take too much time"]}/>
+            <SectionHeading heading={["stop focusing on things which", <br />, "take too much time"]} />
             <BenefitsSection>
                 <BenefitBox image={fixedRates} alt="Woman sitting on gold" heading="fixed rates" description="Our services offer fixed deposit, therefore you can earn without any risk" />
                 <BenefitBox image={earnFromZero} alt="Man earning money" heading="earn from zero" description="Our product is universal to every capital levels and is same profitable for everyone" />
@@ -47,6 +50,8 @@ export default function Home() {
             <Webinar />
             <News />
             <Footer />
+            {isLoading &&
+                <Loader />}
         </>
     )
 }

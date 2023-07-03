@@ -36,7 +36,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
+.loader {
+  top:0;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index:999;
+  display:grid;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.loader__circle {
+  width: 200px;
+  height: 200px;
+  border-radius:50%;
+  animation-name:loader-spin;
+  animation-duration: 2000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  border:15px solid #f3f3f3;
+  border-top:15px solid #0074FF;
 
+}
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -69,6 +99,11 @@ header img {
 header nav {
   display:flex;
   gap:5vw;
+}
+.exchange-nav {
+  display:flex;
+  padding-inline: 10vw;
+  justify-content: flex-end;
 }
 header nav a {
   color:black;
@@ -120,6 +155,49 @@ header nav a {
 .hero_right-block,.hero__left-block {
   width: 40vw;
   max-width: 40vw;
+}
+.swap-widget__box {
+  width: 20vw;
+  min-width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  border-radius: 20px;
+  height: fit-content;
+  position: relative;
+}
+.swap-widgets {
+  display:flex;
+  margin-top:100px;
+  justify-content: center;
+}
+
+.swap-widget__box .locked-box {
+  position:absolute;
+  color:#7f7f7f;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  top:0;
+  background-color: #dad8d8;
+  border-radius: 20px;
+  width: 100%;
+  height: 500px;
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family:Roboto-Bold;
+}
+.swap-widget__box .locked-box .cta-btn {
+  height: 70px;
+  width: 60%;
+}
+.swap-widget__box .locked-box img {
+  max-width: 60%;
+  flex-basis: 100%;
+  height: 45%;
+  display:block;
+  margin: auto;
+}
+.exchange-nav .cta-btn {
+  height: 60px;
+  width: 10vw;
 }
 .section-heading {
   text-transform: uppercase;
@@ -764,6 +842,35 @@ header nav {
   display:block;
   font-size:3em;
 }
+.error-popup {
+  position:absolute;
+  width: 50vw;
+  background-color: rgba(0,0,0,0.75);
+  z-index:998;
+  left:50%;
+  top:250px;
+  transform: translate(-50%);
+  border-radius:50px;
+  
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color:white;
+}
+.error-popup__reason h3 {
+  font-size:3em;
+}
+.error-popup__reason h3,.error-popup__reason p {
+  width: 80%;
+  padding-inline: 10%;
+}
+.error-popup__reason p {
+  font-size:1.8em;
+}
+.error-popup img {
+  height: 200px;
+}
 @media screen and (max-width:1550px) {
   .wallet-app .benefit-box {
     width: 30vw;
@@ -850,6 +957,12 @@ header nav {
 @media screen and (max-width:1023px)  {
   .chart-block::after {
     height: 50%;
+  }
+  .error-popup__reason h3 {
+    font-size:2.3em;
+  }
+  .error-popup__reason p {
+    font-size:1.5em;
   }
   .pricing__box {
     width: 50vw;
@@ -1000,6 +1113,9 @@ header nav {
 @media screen and (max-width:700px) {
   .chart-block:after {
     height: 50%;
+  }
+  .error-popup {
+    width: 80vw;
   }
   .pricing__box .subscription-level {
     height: 100px;
@@ -1164,6 +1280,12 @@ header nav {
   .video-section .section-heading {
     margin-bottom:100px;
     margin-top:150px;
+  }
+  .error-popup__reason h3 {
+    font-size:1.9em;
+  }
+  .error-popup__reason p {
+    font-size:1.2em;
   }
   .pricing__box {
     margin-block:20px;
