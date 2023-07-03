@@ -102,6 +102,7 @@ header nav {
 }
 .exchange-nav {
   display:flex;
+  margin-top:50px;
   padding-inline: 10vw;
   justify-content: flex-end;
 }
@@ -957,6 +958,9 @@ header nav {
 @media screen and (max-width:1023px)  {
   .chart-block::after {
     height: 50%;
+  }
+  .exchange-nav .cta-btn {
+    width: 40vw;
   }
   .error-popup__reason h3 {
     font-size:2.3em;

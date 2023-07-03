@@ -1,5 +1,5 @@
 import Header from "layouts/header";
-import { Theme, SwapWidget } from "@uniswap/widgets";
+import { SwapWidget } from "@uniswap/widgets";
 import "@uniswap/widgets/fonts.css";
 import { CtaBtn } from "components/cta-btn";
 import { ethers } from "ethers";

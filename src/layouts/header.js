@@ -23,7 +23,6 @@ export default function Header(props) {
     }, []);
     function toggleNav() {
         if (toggle) {
-            console.log(navRef.current);
             navRef.current.style.left = "-50vw";
             setTimeout(() => {
                 setToggle(!toggle);

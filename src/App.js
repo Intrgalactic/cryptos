@@ -4,8 +4,7 @@ import Home from 'pages/home';
 import Pricing from 'pages/pricing';
 import Exchange from 'pages/exchange';
 import Wallet from 'pages/wallet';
-import { ethers } from 'ethers';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function App() {
   const [isLoading,setIsLoading] = useState(true);
