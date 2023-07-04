@@ -1,11 +1,18 @@
 
-export default function setLocalStorageItem(action, itemName, item) {
+export function setSessionStorageItem(action, itemName, item) {
     switch (action) {
-        case "set": window.localStorage.setItem(itemName, item);
+        case "set": window.sessionStorage.setItem(itemName, item);
             break;
-        case "delete": window.localStorage.removeItem(itemName);
+        case "delete": window.sessionStorage.removeItem(itemName);
             break;
         default:
             break
+    }
+}
+
+export function convertNetworkName(name) {
+    switch (name) {
+        case "homestead": return "ethereum";
+        default: return name;
     }
 }

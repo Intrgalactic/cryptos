@@ -7,13 +7,16 @@ import ExchangeNav from "layouts/exchange-nav";
 import SwapWidgets from "layouts/swap-widgets";
 import Loader from "layouts/loader";
 import useLoader from "hooks/useLoader";
-import { useEffect, useState, useReducer } from "react";
-import setLocalStorageItem from "utils/utilities";
-import useLocalStorage from "hooks/useLocalStorage";
+import { useEffect, useState, useReducer, useRef } from "react";
+import { setSessionStorageItem, convertNetworkName } from "utils/utilities";
+import useSessionStorage from "hooks/useSessionStorage";
 import { SwapWidgetBox } from "components/swap-widget-box";
 import { LockedBox } from "components/locked-box";
 import { ErrorPopup } from "components/error-popup";
-
+import { BlockchainUserRecord } from "components/blockchain-record";
+import { SectionHeading } from "components/section-heading";
+import { setup1inchWidget } from "@1inch/embedded-widget";
+import Footer from "layouts/footer";
 
 export default function Exchange({ isLoading, setIsLoading }) {
     const initialErrState = {
@@ -21,8 +24,9 @@ export default function Exchange({ isLoading, setIsLoading }) {
         errorDescription: '',
         isError: false
     }
+
     const [provider, setProvider] = useState();
-    const [accounts, setAccounts] = useState(useLocalStorage("eth_accounts"));
+    const [accounts, setAccounts] = useState(useSessionStorage("eth_accounts"));
     const [signer, setSigner] = useState();
     const [network, setNetwork] = useState({
         networkName: '',
@@ -30,24 +34,50 @@ export default function Exchange({ isLoading, setIsLoading }) {
     })
     const [isProviderMissing, setIsProviderMissing] = useState();
     const [error, dispatch] = useReducer(errorReducer, initialErrState);
-
-    useLoader(setIsLoading);
+    const oneInchSwapWidgetRef = useRef();
 
     useEffect(() => {
-
         try {
-            const web3Provider = new ethers.providers.Web3Provider(window.ethereum)
-            if (!provider) {
-                setProvider(web3Provider);
-                getNetwork();
-            }
-            setSigner(web3Provider.getSigner());
-            window.ethereum.on("accountsChanged", refreshAccounts);
-            window.ethereum.on("chainChanged", getNetwork);
-            return () => {
-                window.ethereum.removeListener("chainChanged", getNetwork);
-                window.ethereum.removeListener("accountsChanged", refreshAccounts);
-            }
+            new Promise(async (resolve, reject) => {
+                if (window.ethereum) {
+                    const web3Provider = new ethers.providers.Web3Provider(window.ethereum)
+                    if (!provider) {
+                        setProvider(web3Provider);
+                        getNetwork();
+                    }
+                    if (accounts !== null) {
+                        await getBalance(accounts.accounts);
+                    }
+                    if (oneInchSwapWidgetRef.current) {
+                        setup1inchWidget({
+                            chainId: 1,
+                            sourceTokenSymbol: "ETH",
+                            destinationTokenSymbol: "USDT",
+                            hostElement: oneInchSwapWidgetRef.current,
+                            provider: window.ethereum,
+                            theme: "light",
+                            sourceTokenAmount: "1"
+                        });
+                    }
+                    setSigner(web3Provider.getSigner());
+                    window.ethereum.on("accountsChanged", refreshAccounts);
+                    window.ethereum.on("chainChanged", getNetwork);
+                }
+                else {
+                    setIsProviderMissing(true);
+                    dispatch({type: "missing provider"});
+                }
+               
+                setTimeout(() => {
+                    resolve(true);
+                }, 1000);
+                return () => {
+                    window.ethereum.removeListener("chainChanged", getNetwork);
+                    window.ethereum.removeListener("accountsChanged", refreshAccounts);
+                }
+            }).then(() => {
+                setIsLoading(false);
+            });
         }
         catch (err) {
             setIsProviderMissing(true);
@@ -66,12 +96,12 @@ export default function Exchange({ isLoading, setIsLoading }) {
                 dispatch({ type: "no error" });
             }
             setNetwork({
-                networkName: network.name,
+                networkName: convertNetworkName(network.name),
                 chainId: network.chainId
             })
         }
         catch (err) {
-            dispatch({type:err.code});
+            dispatch({ type: err.code });
         }
     }
     async function connectWallet() {
@@ -86,7 +116,7 @@ export default function Exchange({ isLoading, setIsLoading }) {
     function refreshAccounts(accounts) {
         try {
             if (accounts.length > 0) {
-                setLocalStorageItem('set', "eth_accounts", JSON.stringify({ accounts }));
+                setSessionStorageItem('set', "eth_accounts", JSON.stringify({ accounts }));
                 setAccounts({
                     accounts: accounts
                 });
@@ -94,12 +124,12 @@ export default function Exchange({ isLoading, setIsLoading }) {
                 getBalance(accounts);
             }
             else {
-                setLocalStorageItem('delete', "eth_accounts");
+                setSessionStorageItem('delete', "eth_accounts");
                 setAccounts(null);
             }
         }
         catch (err) {
-            dispatch({type:err.code});
+            dispatch({ type: err.code });
         }
     }
     async function getBalance(accounts) {
@@ -113,7 +143,7 @@ export default function Exchange({ isLoading, setIsLoading }) {
             })
         }
         catch (err) {
-            dispatch({type:err.code});
+            dispatch({ type: err.code });
         }
     }
     function errorReducer(state, action) {
@@ -135,15 +165,29 @@ export default function Exchange({ isLoading, setIsLoading }) {
     return (
         <>
             <Header />
+
             <div className="exchange-app">
+                <SectionHeading heading={["swap your cryptocurrency within seconds"]} />
                 {!isProviderMissing && !error.isError &&
                     <>
                         <ExchangeNav>
+                            {accounts !== null &&
+                                <>
+                                    <BlockchainUserRecord type="Selected Network" data={network.networkName} />
+                                    <BlockchainUserRecord type="Current ETH Balance" data={accounts.balance} />
+                                </>
+                            }
                             {accounts === null && <CtaBtn btnText="connect" action={connectWallet} />}
                         </ExchangeNav>
                         <SwapWidgets>
                             <SwapWidgetBox>
                                 {accounts !== null && <SwapWidget hideConnectionUI={true} width="20vw" />}
+                                {accounts === null &&
+                                    <LockedBox>
+                                        <CtaBtn btnText="connect" action={connectWallet} />
+                                    </LockedBox>}
+                            </SwapWidgetBox>
+                            <SwapWidgetBox ref={oneInchSwapWidgetRef}>
                                 {accounts === null &&
                                     <LockedBox>
                                         <CtaBtn btnText="connect" action={connectWallet} />
@@ -156,6 +200,7 @@ export default function Exchange({ isLoading, setIsLoading }) {
             {isProviderMissing || error.isError ?
                 <ErrorPopup errReason={error.errorReason} errDescription={error.errorDescription} /> : null
             }
+            <Footer/>
             {isLoading &&
                 <Loader />}
 

@@ -2,30 +2,49 @@
   font-family: Roboto-Regular;
   src: url('assets/fonts/Roboto-Regular.ttf');
 }
+
 @font-face {
   font-family: Exo2-ExtraBold;
   src: url('assets/fonts/Exo2-ExtraBold.ttf');
 }
+
 @font-face {
   font-family: Roboto-Medium;
   src: url('assets/fonts/Roboto-Medium.ttf');
 }
+
 @font-face {
   font-family: Roboto-Bold;
   src: url('assets/fonts/Roboto-Bold.ttf');
 }
+
 html {
   scroll-behavior: smooth;
 }
-section:not(.testimonials,.video-section,.companies-bar,.webinar,.news,.faq,.wallet__testimonials,.pricing),header {
-  margin-inline:10vw;
+
+section:not(.testimonials, .video-section, .companies-bar, .webinar, .news, .faq, .wallet__testimonials, .pricing),
+header {
+  margin-inline: 10vw;
 }
-.hero__heading,.section-heading,.chart-block__description-heading,.testimonial-box h1,.webinar h1,.news__box h2 {
-	font-family:Exo2-ExtraBold;
+
+.hero__heading,
+.section-heading,
+.chart-block__description-heading,
+.testimonial-box h1,
+.webinar h1,
+.news__box h2 {
+  font-family: Exo2-ExtraBold;
 }
-button,.benefit-box,.chart-block__description-description,.testimonial-box p,.news-heading p,.news__box p {
-	font-family:Roboto-Bold;
+
+button,
+.benefit-box,
+.chart-block__description-description,
+.testimonial-box p,
+.news-heading p,
+.news__box p {
+  font-family: Roboto-Bold;
 }
+
 body {
   margin: 0;
   position: relative;
@@ -36,37 +55,42 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
+
 .loader {
-  top:0;
+  top: 0;
   height: 100vh;
   width: 100vw;
   position: fixed;
-  z-index:999;
-  display:grid;
+  z-index: 999;
+  display: grid;
   align-items: center;
   justify-content: center;
   background-color: white;
 }
+
 .loader__circle {
   width: 200px;
   height: 200px;
-  border-radius:50%;
-  animation-name:loader-spin;
+  border-radius: 50%;
+  animation-name: loader-spin;
   animation-duration: 2000ms;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  border:15px solid #f3f3f3;
-  border-top:15px solid #0074FF;
+  border: 15px solid #f3f3f3;
+  border-top: 15px solid #0074FF;
 
 }
+
 @keyframes loader-spin {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -74,89 +98,103 @@ code {
 
 button {
   text-transform: uppercase;
-  border:none;
-  font-size:1.1em;
-  color:black;
+  border: none;
+  font-size: 1.1em;
+  color: black;
 }
+
 button a {
-  color:black;
+  color: black;
   -webkit-text-fill-color: black;
 }
+
 button:hover {
   cursor: pointer;
 }
+
 header {
-  display:flex;
+  display: flex;
   align-items: center;
-  top:0;
+  top: 0;
   height: 200px;
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 header img {
   max-width: 80vw;
 }
+
 header nav {
-  display:flex;
-  gap:5vw;
+  display: flex;
+  gap: 5vw;
 }
+
 .exchange-nav {
-  display:flex;
-  margin-top:50px;
+  display: flex;
+  margin-top: 50px;
   padding-inline: 10vw;
-  justify-content: flex-end;
+  justify-content: space-around;
 }
+
 header nav a {
-  color:black;
+  color: black;
   font-family: Roboto-Regular;
   text-transform: uppercase;
   text-decoration: none;
-  font-size:clamp(1rem,1.4vw,1.2em);
-  text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  font-size: clamp(1rem, 1.4vw, 1.2em);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .hero {
-  display:flex;
+  display: flex;
   justify-content: space-between;
-  
+
   flex-wrap: wrap;
-  row-gap:100px;
+  row-gap: 100px;
 }
+
 .hero__left-block {
-  text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .hero__right-block {
-  display:flex;
+  display: flex;
   align-items: center;
 }
+
 .hero__heading {
-  font-size:3em;
+  font-size: 3em;
   text-align: center;
   text-transform: uppercase;
 }
 
 .hero__highlighted {
-  background-image:url('assets/images/text-highlight.png');
-  color:transparent;
-  background-clip:text;
+  background-image: url('assets/images/text-highlight.png');
+  color: transparent;
+  background-clip: text;
   -webkit-background-clip: text;
 }
 
 .hero__description {
-  font-size:clamp(2rem,2vw,2.9rem);
-  font-family:Roboto-Medium;
+  font-size: clamp(2rem, 2vw, 2.9rem);
+  font-family: Roboto-Medium;
 }
+
 .hero__btn {
   width: 30%;
   height: 60px;
-  border-radius:30px;
-  color:white;
+  border-radius: 30px;
+  color: white;
   background-color: #8D00FF;
 }
-.hero_right-block,.hero__left-block {
+
+.hero_right-block,
+.hero__left-block {
   width: 40vw;
   max-width: 40vw;
 }
+
 .swap-widget__box {
   width: 20vw;
   min-width: 300px;
@@ -164,173 +202,213 @@ header nav a {
   border-radius: 20px;
   height: fit-content;
   position: relative;
-}
-.swap-widgets {
-  display:flex;
-  margin-top:100px;
-  justify-content: center;
+  height: 405px;
 }
 
+.swap-widgets {
+  display: flex;
+  margin-top: 100px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  row-gap:100px;
+}
+#oneInchWidgetFrame {
+  height: 405px;
+  width: 100%;
+  border:none;
+  border-radius:20px;
+}
 .swap-widget__box .locked-box {
-  position:absolute;
-  color:#7f7f7f;
+  position: absolute;
+  color: #7f7f7f;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  top:0;
+  top: 0;
   background-color: #dad8d8;
   border-radius: 20px;
   width: 100%;
   height: 500px;
-  display:flex;
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  font-family:Roboto-Bold;
+  font-family: Roboto-Bold;
 }
+
 .swap-widget__box .locked-box .cta-btn {
   height: 70px;
   width: 60%;
 }
+
 .swap-widget__box .locked-box img {
   max-width: 60%;
   flex-basis: 100%;
   height: 45%;
-  display:block;
+  display: block;
   margin: auto;
 }
+
 .exchange-nav .cta-btn {
   height: 60px;
+  align-self: flex-end;
   width: 10vw;
 }
+
 .section-heading {
   text-transform: uppercase;
-  font-size:clamp(2em,3em,3.5em);
-  padding-inline:10%;
+  font-size: clamp(2em, 3em, 3.5em);
+  padding-inline: 10%;
   width: 80%;
-  animation-name:h1-fade;
+  animation-name: h1-fade;
   animation-timing-function: ease;
   animation-iteration-count: 1;
   animation-duration: 300ms;
 }
+
 @keyframes h1-fade {
   0% {
     opacity: 0;
-    transform:translateY(-100px);
+    transform: translateY(-100px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 .benefits {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top:100px;
-  row-gap:50px;
-  z-index:1;
+  margin-top: 100px;
+  row-gap: 50px;
+  z-index: 1;
   position: relative;
 }
+
 .benefits .cta-btn {
-  margin:auto;
+  margin: auto;
 }
+
 .cta-btn:hover {
-  background-color:#8d00ff;
+  background-color: #8d00ff;
 }
+
 .benefit-box {
-  background-image:url('assets/images/benefit-box-bg.png');
+  background-image: url('assets/images/benefit-box-bg.png');
   background-size: cover;
   width: 20vw;
-  border-radius: 20px; 
-  padding:20px;
+  border-radius: 20px;
+  padding: 20px;
   height: 500px;
-  color:white;
-  text-shadow:0px 4px 4px rgba(0,0,0,0.7);
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 4px 20px black;
 }
+
 .benefit-box__image {
   max-width: 80%;
   height: 250px;
 }
+
 .benefit-box__heading {
-  font-size:1.8em;
+  font-size: 1.8em;
   text-transform: uppercase;
 }
 
 .benefit-box__description {
-  font-size:1.4em;
+  font-size: 1.4em;
 }
+
 .section-heading {
-  margin-block:200px;
+  margin-block: 200px;
 }
+
 .chart-block-section {
-  display:grid;
-  gap:400px;
-  margin-top:100px;
+  display: grid;
+  gap: 400px;
+  margin-top: 100px;
 }
 
 .chart-block {
-  display:flex;
-  gap:50px;
+  display: flex;
+  gap: 50px;
   position: relative;
-  z-index:2;
+  z-index: 2;
 }
+
 .chart-block:last-of-type {
   flex-direction: row-reverse;
 }
 
 .chart-block img {
-  order:2;
+  order: 2;
 }
-h1,p,img,button,video,.custom-play-btn {
+
+h1,
+p,
+img,
+button,
+video,
+.custom-play-btn {
   position: relative;
-  z-index:2;
+  z-index: 2;
 }
+
 .chart-block:after:not(.wallet-app .chart-block) {
-  z-index:1;
+  z-index: 1;
   position: absolute;
-  bottom:-110px;
+  bottom: -110px;
   height: 110%;
-  left:-15vw;
-  content:'';
+  left: -15vw;
+  content: '';
   width: 105vw;
-  background-image:url('assets/images/equities-chart-bg.png');
-  background-size:cover;
+  background-image: url('assets/images/equities-chart-bg.png');
+  background-size: cover;
   background-repeat: repeat;
-  filter:blur(4px);
+  filter: blur(4px);
 
 }
+
 .chart-block:last-of-type:after {
-  background-image:url('assets/images/investment-chart-bg.png');
+  background-image: url('assets/images/investment-chart-bg.png');
 }
+
 .chart-block__description-heading {
-  font-size:2.5em;
+  font-size: 2.5em;
   align-self: first baseline;
-  margin:0;
+  margin: 0;
 }
+
 .chart-block__description {
   text-align: left;
-  text-shadow: 0px 4px 6px rgba(0,0,0,0.4);
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
 }
+
 .chart-block img {
   height: auto;
-  filter:drop-shadow(0px 20px 20px black );
+  filter: drop-shadow(0px 20px 20px black);
 }
-.chart-block__description,.chart-block img {
+
+.chart-block__description,
+.chart-block img {
   width: 40vw;
 }
 
 .chart-block__description-description {
-  font-size:2em;
+  font-size: 2em;
   width: 90%;
 }
+
 .cta-btn {
   background-color: #FF0066;
-  width :15vw;
+  width: 15vw;
   height: 100px;
   transition-duration: 300ms;
   border-radius: 30px;
-  font-size:1.4em;
-  box-shadow: 0px 7px 7px rgba(0,0,0,0.7);
+  font-size: 1.4em;
+  box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.7);
 }
+
 video {
   background-image: url('assets/images/video-bg.png');
   background-size: 100% 100%;
@@ -338,277 +416,328 @@ video {
   height: 600px;
   border-radius: 50px;
 }
+
 .video-section {
-  background-image:url('assets/images/video-block-bg.png');
+  background-image: url('assets/images/video-block-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
-  padding-block:50px;
+  padding-block: 50px;
 }
+
 .video-section .cta-btn {
   width: 30vw;
-  margin-top:50px;
+  margin-top: 50px;
 }
+
 .video-section__block {
   position: relative;
 }
 
 .custom-play-btn {
-  content:'';
-  top:50%;
-  left:50%;
+  content: '';
+  top: 50%;
+  left: 50%;
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 200px;
   height: 200px;
-  background-image:url('assets/images/play-btn.png');
-  background-size:contain;
+  background-image: url('assets/images/play-btn.png');
+  background-size: contain;
   background-repeat: no-repeat;
 
 }
+
 .testimonials {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   position: relative;
   height: 600px;
-  background-image:url('assets/images/testimonials-bg.png');
-  background-position-y:80%;
+  background-image: url('assets/images/testimonials-bg.png');
+  background-position-y: 80%;
   background-repeat: no-repeat;
   background-size: 110%;
 }
 
 .testimonial-box {
   width: 15vw;
-  padding:20px;
+  padding: 20px;
   height: 400px;
-  background-image:url('assets/images/testimonial-box-bg.png');
+  background-image: url('assets/images/testimonial-box-bg.png');
   background-size: cover;
-  border-radius:50px;
+  border-radius: 50px;
   box-shadow: 0px 4px 20px black;
-  text-shadow: 0px 4px 4px rgba(0,0,0,0.5);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   position: relative;
-  z-index:2;
+  z-index: 2;
 }
+
 .testimonial-box:nth-child(2) {
-  margin-left:10vw;
+  margin-left: 10vw;
 }
+
 .testimonial-box:nth-child(4) {
   margin-right: 10vw;
 }
-.testimonial-box:first-of-type,.testimonial-box:last-of-type {
-  position: absolute;
-  top:200px;
-}
-.testimonial-box:first-of-type {
-  left:-7.5vw;
-}
+
+.testimonial-box:first-of-type,
 .testimonial-box:last-of-type {
-  right:-7.5vw;
+  position: absolute;
+  top: 200px;
 }
+
+.testimonial-box:first-of-type {
+  left: -7.5vw;
+}
+
+.testimonial-box:last-of-type {
+  right: -7.5vw;
+}
+
 .testimonial-box h1 {
   text-transform: uppercase;
 }
 
 .testimonial-box img:first-of-type {
-  border-radius:30px;
+  border-radius: 30px;
 }
+
 .testimonial-box img:last-of-type {
-  filter:drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
 .companies-bar__logos {
-  display:flex;
+  display: flex;
 }
+
 .companies-bar__logos:not(footer .companies-bar__logos) {
   background-color: #f3f3f3;
-  padding:20px;
+  padding: 20px;
   height: 250px;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
   flex-wrap: wrap;
   gap: 50px;
 }
+
 .companies-bar__logos:not(footer .companies-bar__logos) img {
   width: 350px;
   max-width: 30vw;
   height: auto;
 }
+
 .companies-bar__stars {
-  background-image: linear-gradient(to bottom,white 50%, #f3f3f3 50%);
-  display:flex;
+  background-image: linear-gradient(to bottom, white 50%, #f3f3f3 50%);
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .companies-bar__stars img {
   width: 200px;
 }
+
 .webinar {
-  display:flex;
+  display: flex;
   justify-content: space-evenly;
-  color:white;
-  background-image:url('assets/images/webinar-bg.png');
+  color: white;
+  background-image: url('assets/images/webinar-bg.png');
   height: 300px;
   align-items: center;
-  margin-top:150px;
+  margin-top: 150px;
   flex-wrap: wrap;
 }
+
 .webinar h1 {
-  text-shadow: 0px 4px 4px rgba(0,0,0,0.7);
-  font-size:3em;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
+  font-size: 3em;
 }
+
 .webinar .cta-btn {
-  box-shadow:0px 7px 7px rgba(0,0,0,0.6);
+  box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.6);
 }
+
 .news-heading {
   text-align: left;
-  margin-bottom:150px;
+  margin-bottom: 150px;
 }
+
 .news-heading .section-heading {
-  margin-bottom:0;
+  margin-bottom: 0;
 }
+
 .news-heading p {
-  font-size:2.3em;
+  font-size: 2.3em;
   width: 35%;
   padding-inline: 10%;
 }
+
 .news__records {
-  display:flex;
+  display: flex;
   width: 80%;
   max-width: 80%;
-  margin-inline:10%;
-  gap:20vw;
+  margin-inline: 10%;
+  gap: 20vw;
 }
+
 .news__records .news__box {
   width: 30vw;
   text-align: center;
-  border-radius:25px;
-  background-image:url('assets/images/news-bg.png');
+  border-radius: 25px;
+  background-image: url('assets/images/news-bg.png');
   height: 500px;
   text-align: left;
-  color:white;
-  box-shadow:0px 4px 20px black;
+  color: white;
+  box-shadow: 0px 4px 20px black;
 }
-.news
+
+.news .news__box p {
+  font-size: 1.5em;
+}
+
+.news__box h2,
 .news__box p {
-  font-size:1.5em;
-}
-.news__box h2,.news__box p {
   width: 80%;
   text-shadow: 0px 4px 7px black;
-  padding-inline:10%;
+  padding-inline: 10%;
 }
+
 .news__box img {
   width: 100%;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }
+
 .move-arrows {
   width: 80%;
-  margin-inline:10%;
-  display:flex;
-  margin-top:50px;
+  margin-inline: 10%;
+  display: flex;
+  margin-top: 50px;
   justify-content: space-between;
 }
+
 .move-arrows img:first-of-type {
   transform: rotate(180deg);
-  margin-left:10vw;
+  margin-left: 10vw;
 }
+
 .move-arrows img:last-of-type {
   margin-right: 10vw;
 }
+
 .move-arrows img {
-  filter:drop-shadow(0px 4px 2px rgba(0,0,0,0.6));
-  width:10vw;
+  filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.6));
+  width: 10vw;
   height: auto;
 }
+
 .move-arrows img:hover {
-  filter:brightness(80%) drop-shadow(0px 4px 2px rgba(0,0,0,0.6));
+  filter: brightness(80%) drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.6));
 }
+
 footer {
-  padding-block:50px;
+  padding-block: 50px;
   background-color: #0c6dff;
-  z-index:3;
+  z-index: 3;
   position: relative;
   height: 600px;
 }
+
 footer img:first-of-type:not(footer .companies-bar__logos img) {
-  display:block;
-  margin-left:10%;
+  display: block;
+  margin-left: 10%;
   max-width: 80%;
 }
+
 .footer__links {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   width: 80vw;
-  padding-inline:10%;
+  padding-inline: 10%;
   text-transform: uppercase;
   flex-wrap: wrap;
 }
+
 .footer__links-column {
-  margin-top:50px;
-  font-size:1.5em;
-  text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  margin-top: 50px;
+  font-size: 1.5em;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .footer__links-column p {
-  font-family:Exo2-ExtraBold;
+  font-family: Exo2-ExtraBold;
 }
+
 .footer__links-column a {
   display: block;
   text-decoration: none;
-  color:black;
-  font-family:Roboto-Bold;
+  color: black;
+  font-family: Roboto-Bold;
 }
+
 .footer-shape {
   margin-top: 150px;
   vertical-align: bottom;
   width: 100%;
 }
+
 footer .companies-bar__logos {
   align-items: center;
-  margin-top:50px;
-  margin-left:10%;
+  margin-top: 50px;
+  margin-left: 10%;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 80%;
 }
+
 footer .companies-bar__logos img {
   width: 200px;
-  filter:grayscale(100%);
+  filter: grayscale(100%);
 }
+
 footer .companies-bar__logos img:hover {
-  filter:grayscale(0);
+  filter: grayscale(0);
   cursor: pointer;
 }
+
 footer h3 {
   text-align: left;
-  margin-left:10%;
-  font-size:2em;
+  margin-left: 10%;
+  font-size: 2em;
   font-family: Roboto-Bold;
 }
+
 .move-arrows:not(.news .move-arrows) {
   display: none;
 }
+
 .pricing {
-  margin-top:50px;
+  margin-top: 50px;
 }
+
 .pricing__records {
-  display:flex;
+  display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  row-gap:50px;
+  row-gap: 50px;
 }
+
 .pricing__box .subscription-level {
   max-width: 80%;
   height: 200px;
 }
+
 .pricing__subscription-type {
-  font-family:Exo2-ExtraBold;
-  color:white;
-  font-size:2em;
+  font-family: Exo2-ExtraBold;
+  color: white;
+  font-size: 2em;
   text-transform: uppercase;
 
 }
-.pricing__subscription-type,.pricing__box-abilities-record {
+
+.pricing__subscription-type,
+.pricing__box-abilities-record {
   text-shadow: 1px 1px 0 #000,
     -1px 1px 0 #000,
     1px -1px 0 #000,
@@ -634,193 +763,227 @@ footer h3 {
     2px -1px 0 #000,
     -2px -1px 0 #000;
 }
+
 .pricing__box {
-  padding:30px;
+  padding: 30px;
   width: 20vw;
-  background-image:url('assets/images/pricing-bg.png');
+  background-image: url('assets/images/pricing-bg.png');
   background-size: cover;
   border-radius: 30px;
-  box-shadow: rgba(0,0,0,0.5) 3px 3px 6px 0px inset, rgba(0,0,0,0.5) -3px -3px 6px 1px inset, 0px 4px 10px rgba(0,0,0,0.25);
+  box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 6px 0px inset, rgba(0, 0, 0, 0.5) -3px -3px 6px 1px inset, 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
+
 .pricing__box-abilities {
   height: 250px;
 }
+
 .pricing__box-abilities-record {
-  display:flex;
+  display: flex;
   width: 80%;
-  margin-inline:10%;
+  margin-inline: 10%;
   justify-content: space-around;
-  color:white;
-  font-family:Roboto-Bold;
+  color: white;
+  font-family: Roboto-Bold;
   margin-bottom: 20px;
 }
+
 .pricing__box-abilities-record img {
-  filter:drop-shadow(3px 4px 2px #b399ff);
+  filter: drop-shadow(3px 4px 2px #b399ff);
 }
+
 .pricing__box-abilities-record P {
   width: 70%;
   text-align: center;
 }
+
 .pricing .cta-btn {
-  background-color:#7947FF;
+  background-color: #7947FF;
   height: 80px;
   width: 60%;
 }
+
 .pricing .cta-btn:hover {
   background-color: #475AFF;
 }
+
 .section-heading-description {
-  font-family:Roboto-Bold;
-  font-size:1.7em;
+  font-family: Roboto-Bold;
+  font-size: 1.7em;
   width: 50%;
-  padding-inline:25%;
+  padding-inline: 25%;
 }
+
 .pricing-app .section-heading {
-  margin-bottom:0;
+  margin-bottom: 0;
 }
+
 .faq {
-  margin-top:100px;
+  margin-top: 100px;
   width: 80vw;
   padding-inline: 10%;
 }
+
 .faq__record h3 {
-  font-family:Exo2-ExtraBold;
-  font-size:2em;
+  font-family: Exo2-ExtraBold;
+  font-size: 2em;
 }
+
 .faq__record p {
-  font-family:Roboto-Bold;
-  font-size:1.5em;
+  font-family: Roboto-Bold;
+  font-size: 1.5em;
 }
 
 .faq__record hr {
   border-width: 2px;
-  border-color:black;
+  border-color: black;
   width: 60%;
   border-style: solid;
 }
+
 .wallet-header {
   background-image: url('assets/images/header-bg.PNG');
-  margin-inline:0;
+  margin-inline: 0;
   width: 100vw;
   backdrop-filter: blur(5px);
 }
+
 .wallet-header {
-  position:sticky;
-  top:0;
-  z-index:999;
+  position: sticky;
+  top: 0;
+  z-index: 999;
   height: 200px;
 }
+
 .wallet-header nav a {
-  color:white;
+  color: white;
 }
+
 .wallet-app:after {
-  content:'';
-  left:0;
-  top:0px;
+  content: '';
+  left: 0;
+  top: 0px;
   width: 100vw;
   height: 100%;
-  background-image:url('assets/images/wallet-bg.png');
+  background-image: url('assets/images/wallet-bg.png');
   position: absolute;
-  z-index:0;
-  background-size:cover;
+  z-index: 0;
+  background-size: cover;
 }
+
 .wallet-app .section-heading {
-  margin-block:0;
-  margin-top:100px;
-  color:white;
-  text-shadow: 0px 4px 4px rgba(0,0,0,0.5);
+  margin-block: 0;
+  margin-top: 100px;
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
+
 .wallet-app .section-heading-description {
-  color:white;
-  font-family:Roboto-Bold;
-  font-size:1.8em;
-  text-shadow: 0px 4px 4px rgba(0,0,0,0.5);
+  color: white;
+  font-family: Roboto-Bold;
+  font-size: 1.8em;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
+
 .wallet-app .benefit-box {
-  background-image:url('assets/images/wallet-box-bg.png');
+  background-image: url('assets/images/wallet-box-bg.png');
   height: fit-content;
 }
+
 .wallet-app .benefit-box h1 {
   height: 100px;
 }
+
 .wallet-app .benefit-box .cta-btn {
   background-color: #63EAAC;
   max-width: 80%;
 }
+
 .wallet-app .benefit-box .cta-btn:hover {
   background-color: #00CF70;
 }
+
 .wallet-app .chart-block {
   justify-content: space-between;
-  padding-inline:10%;
-  color:white;
+  padding-inline: 10%;
+  color: white;
   align-items: center;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
+
 .wallet-app .chart-block:first-of-type {
-  margin-block:200px;
+  margin-block: 200px;
 }
+
 .wallet-app .chart-block img {
   width: 30vw;
 }
+
 .wallet__testimonial-box:first-of-type {
-  margin-top:100px;
+  margin-top: 100px;
 }
+
 .wallet__testimonials {
   background-image: url('assets/images/wallet-testimonial-bg.png');
   background-position: center;
   background-size: 100% calc(100% - (288px + 283px));
   background-repeat: no-repeat;
-  margin-top:300px;
-  z-index:3;
+  margin-top: 300px;
+  z-index: 3;
   position: relative;
-  filter:drop-shadow( 0px 10px 30px black);
+  filter: drop-shadow(0px 10px 30px black);
 }
+
 .wallet__testimonials .section-heading {
   width: 30vw;
-  text-align:left;
+  text-align: left;
 }
 
 .wallet__testimonial-box {
   margin-bottom: 50px;
-  padding:50px;
+  padding: 50px;
   width: 30vw;
   background-color: black;
-  margin-inline:10%;
+  margin-inline: 10%;
   position: relative;
   border-radius: 30px;
-  color:white;
+  color: white;
   box-shadow: 0px 4px 30px #AD00FF;
-  display:flex;
+  display: flex;
   text-align: left;
   align-items: center;
-  gap:50px;
+  gap: 50px;
 }
+
 .testimonial-shape {
   max-width: 100%;
   height: 300px;
 }
+
 .wallet__testimonial-box:after {
   position: absolute;
-  content:'';
+  content: '';
   width: 30%;
   height: 74px;
-  background-image:url('assets/images/wallet-stars.png');
+  background-image: url('assets/images/wallet-stars.png');
   background-size: contain;
   background-repeat: no-repeat;
   right: 50px;
-  top:-18.5px;
+  top: -18.5px;
 }
+
 .wallet__testimonial-box-data h3 {
   font-family: Exo2-ExtraBold;
 }
+
 .wallet__testimonial-box-data p {
-  font-family:Roboto-Bold;
+  font-family: Roboto-Bold;
 }
+
 .nav-btn {
   background-color: transparent;
-  display:none;
+  display: none;
 }
+
 .nav-btn hr {
   width: 50px;
   height: 5px;
@@ -828,9 +991,11 @@ footer h3 {
   background-color: black;
   border-radius: 40px;
 }
+
 .nav-btn-x {
   width: 80vw;
 }
+
 header nav .nav-btn hr {
   background-color: white;
 }
@@ -838,279 +1003,421 @@ header nav .nav-btn hr {
 header nav {
   transition-duration: 300ms;
 }
+
 .nav-btn-x {
-  color:white;
-  display:block;
-  font-size:3em;
+  color: white;
+  display: block;
+  font-size: 3em;
 }
+
+.exchange-app {
+  padding-bottom: 100px;
+}
+
+.exchange-app .section-heading {
+  margin-block: 50px;
+}
+
 .error-popup {
-  position:absolute;
+  position: absolute;
   width: 50vw;
-  background-color: rgba(0,0,0,0.75);
-  z-index:998;
-  left:50%;
-  top:250px;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 998;
+  left: 50%;
+  top: 350px;
   transform: translate(-50%);
-  border-radius:50px;
-  
-  display:flex;
+  border-radius: 50px;
+
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  color:white;
+  color: white;
 }
+
 .error-popup__reason h3 {
-  font-size:3em;
+  font-size: 3em;
 }
-.error-popup__reason h3,.error-popup__reason p {
+
+.error-popup__reason h3,
+.error-popup__reason p {
   width: 80%;
   padding-inline: 10%;
 }
+
 .error-popup__reason p {
-  font-size:1.8em;
+  font-size: 1.8em;
 }
+
 .error-popup img {
   height: 200px;
 }
+
+.blockchain-user-record {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 20vw;
+  padding: 10px;
+  border-radius: 40px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  background: rgb(182, 13, 232);
+  background: -moz-linear-gradient(152deg, rgba(182, 13, 232, 1) 10%, rgba(123, 29, 253, 1) 51%, rgba(69, 125, 252, 1) 100%);
+  background: -webkit-linear-gradient(152deg, rgba(182, 13, 232, 1) 10%, rgba(123, 29, 253, 1) 51%, rgba(69, 125, 252, 1) 100%);
+  background: linear-gradient(152deg, rgba(182, 13, 232, 1) 10%, rgba(123, 29, 253, 1) 51%, rgba(69, 125, 252, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b60de8", endColorstr="#457dfc", GradientType=1);
+}
+
+.blockchain-user-record h2 {
+  font-family: Exo2-ExtraBold;
+  background-color: white;
+}
+
+.blockchain-user-record p {
+  text-transform: capitalize;
+  font-size: 1.2em;
+  font-family: Roboto-Bold;
+}
+
+.blockchain-user-record p,
+.blockchain-user-record h2 {
+  padding: 10px;
+  border-radius: 20px;
+  background-image:linear-gradient(to right, white 50%, #008BFF 50%);
+
+  background-size:200% 100%;
+  background-position: left;
+  transition-duration: 300ms;
+  box-shadow: rgba(0,0,0,0.25) 0px 30px 60px -12px inset,0px 0px 20px rgba(0,0,0,0.5);
+}
+
+.blockchain-user-record p:hover,
+.blockchain-user-record h2:hover {
+  background-position:right;
+}
+
 @media screen and (max-width:1550px) {
   .wallet-app .benefit-box {
     width: 30vw;
-    display:block;
-    margin:auto;
+    display: block;
+    margin: auto;
     height: fit-content;
   }
+
   .testimonials {
     justify-content: center;
-    gap:100px;
+    gap: 100px;
     height: fit-content;
   }
+
   .news-heading {
     text-align: center;
   }
+
   .news-heading .section-heading {
-    margin-top:100px;
+    margin-top: 100px;
   }
+
   .news-heading p {
     width: 80%;
   }
-  .testimonial-box:nth-child(4),.testimonial-box:nth-child(2) {
+
+  .testimonial-box:nth-child(4),
+  .testimonial-box:nth-child(2) {
     margin-inline: 0;
   }
-  .testimonial-box:first-of-type, .testimonial-box:last-of-type {
+
+  .testimonial-box:first-of-type,
+  .testimonial-box:last-of-type {
     position: initial;
   }
+
   .webinar {
     height: 250px;
   }
+
   .webinar h1 {
     max-width: 80%;
-    margin-inline:10%;
-    font-size:clamp(1em,1.7em,2em);
+    margin-inline: 10%;
+    font-size: clamp(1em, 1.7em, 2em);
   }
 }
+
 @media screen and (max-width:1550px) and (min-width:1024px) {
   .pricing__box {
     width: 30vw;
   }
-  .hero {
-    margin-top:50px;
+  .blockchain-user-record {
+    display:block;
   }
+  .blockchain-user-record h2 {
+    height: 70px;
+  }
+  .hero {
+    margin-top: 50px;
+  }
+
   .testimonial-box {
     width: 25vw;
   }
+
   .hero__left-block .hero__heading {
-    font-size:2.3em;
+    font-size: 2.3em;
   }
+
   .hero__left-block .hero__description {
-    font-size:1.8em;
+    font-size: 1.8em;
   }
+
   .hero__right-block img {
     width: 30vw;
   }
+
   .hero__btn {
     width: 300px;
   }
+
   .benefit-box__image {
     height: 200px;
   }
+
   .benefit-box__heading {
     height: 70px;
   }
+
   .chart-block__description-heading {
-    font-size:1.7em;
+    font-size: 1.7em;
   }
+
   .chart-block__description-description {
-    font-size:1.5em;
+    font-size: 1.5em;
   }
+
   .cta-btn {
     width: 30vw;
   }
+
   .chart-block__description {
     width: 35vw;
   }
+
   .chart-block img {
     width: 45vw;
   }
+
   .video-section video {
     width: 80vw;
   }
 }
-@media screen and (max-width:1023px)  {
+
+@media screen and (max-width:1023px) {
   .chart-block::after {
     height: 50%;
   }
+
   .exchange-nav .cta-btn {
     width: 40vw;
   }
+
   .error-popup__reason h3 {
-    font-size:2.3em;
+    font-size: 2.3em;
+  }
+  .blockchain-user-record {
+    display:block;
+  }
+  .blockchain-user-record h2 {
+    height: 60px;
+    font-size:1.2em;
   }
   .error-popup__reason p {
-    font-size:1.5em;
+    font-size: 1.5em;
   }
+
   .pricing__box {
     width: 50vw;
   }
+
   .wallet__testimonials {
-    background-size:cover;
-    background-position-x:100%;
-    padding-block:50px;
+    background-size: cover;
+    background-position-x: 100%;
+    padding-block: 50px;
   }
+
   .wallet-app .wallet__testimonials .section-heading {
     width: 60vw;
-    padding-inline:20%;
+    padding-inline: 20%;
     text-align: center;
     margin-top: 0;
   }
+
   .testimonial-shape {
-    display:none;
+    display: none;
   }
+
   .wallet__testimonial-box {
     width: 60vw;
-    margin-inline:auto;
+    margin-inline: auto;
   }
+
   .section-heading-description {
-    font-size:1.5em;
+    font-size: 1.5em;
   }
+
   .wallet-app .chart-block img {
     width: 50vw;
   }
+
   .wallet-app .section-heading-description {
-    font-size:1.5em;
+    font-size: 1.5em;
     width: 80%;
     padding-inline: 10%;
   }
+
   footer img:first-of-type:not(footer .companies-bar__logos img) {
-    margin:auto;
+    margin: auto;
   }
+
   .news__records {
-    gap:10vw;
+    gap: 10vw;
   }
+
   .testimonial-box {
     width: 30vw;
   }
+
   footer {
     height: fit-content;
   }
+
   footer .companies-bar__logos {
     justify-content: center;
-    column-gap:50px;
-    row-gap:30px;
+    column-gap: 50px;
+    row-gap: 30px;
   }
+
   .footer__links {
     justify-content: center;
-    column-gap:50px;
+    column-gap: 50px;
   }
+
   .news__records .news__box {
     width: 35vw;
     height: 450px;
   }
+
   .news__records .news__box h2 {
-    font-size:1.3em;
+    font-size: 1.3em;
   }
+
   .news__records .news__box p {
-    font-size:1.2em;
+    font-size: 1.2em;
   }
+
   .testimonial-box img:last-of-type {
     width: 80%;
-    margin-inline:10%;
+    margin-inline: 10%;
   }
+
   .video-section__section-heading {
-    margin-top:210px;
-    margin-bottom:100px;
+    margin-top: 210px;
+    margin-bottom: 100px;
   }
+
   .video-section__section-heading .section-heading {
-    margin-block:0;
+    margin-block: 0;
   }
+
   .video-section__block video {
     height: 400px;
   }
+
   .video-section .cta-btn {
     width: 70vw;
   }
+
   .video-section video {
     width: 80vw;
   }
-  .hero__left-block,.hero__right-block {
+
+  .hero__left-block,
+  .hero__right-block {
     width: 80vw;
     max-width: 80vw;
   }
+
   .chart-block-section {
-    gap:100px;
+    gap: 100px;
   }
-  .chart-block,.chart-block:last-of-type {
+
+  .chart-block,
+  .chart-block:last-of-type {
     flex-direction: column;
   }
+
   .chart-block__description {
-    margin-top:50px;
+    margin-top: 50px;
   }
-  .chart-block__description, .chart-block img {
+
+  .chart-block__description,
+  .chart-block img {
     width: 80vw;
   }
+
   .cta-btn {
     width: 40vw;
     height: 70px;
     font-size: 1em;
   }
+
   .hero__right-block img {
     width: 60vw;
-    display:block;
-    margin:auto;
+    display: block;
+    margin: auto;
   }
+
   .benefit-box__image {
     height: 170px;
   }
+
   .benefits {
     justify-content: center;
-    column-gap:60px;
+    column-gap: 60px;
   }
+
   .benefit-box {
     width: 30vw;
     height: 350px;
   }
+
   .benefit-box__heading {
-    font-size:1.4em;
+    font-size: 1.4em;
   }
+
   .benefit-box__description {
-    font-size:1em;
+    font-size: 1em;
   }
 }
+
 @media screen and (max-width:1024px) and (min-width:550px) {
   .hero__btn {
     width: 40vw;
   }
+
   .webinar {
     background-size: 100% 100%;
   }
+
   .section-heading {
-    margin-block:100px;
-    font-size:2em;
+    margin-block: 100px;
+    font-size: 2em;
   }
+
   .chart-block__description-heading {
-    font-size:2em;
+    font-size: 2em;
   }
+
   .chart-block__description-description {
-    font-size:1.5em;
+    font-size: 1.5em;
   }
 }
 
@@ -1118,162 +1425,204 @@ header nav {
   .chart-block:after {
     height: 50%;
   }
+  .exchange-nav {
+    justify-content: space-between;
+  }
+  .blockchain-user-record {
+    width: 35vw;
+  }
   .error-popup {
     width: 80vw;
   }
+
   .pricing__box .subscription-level {
     height: 100px;
   }
+
   .pricing__box-abilities-record img {
     height: 30px;
   }
+
   .pricing__subscription-type {
     font-size: 1.5em;
   }
+
   .pricing__box {
     height: 550px;
     width: 50vw;
   }
+
   .pricing__box .cta-btn {
-    margin-top:0px;
+    margin-top: 0px;
     width: 50%;
     height: 50px;
-    margin-top:50px;
+    margin-top: 50px;
   }
+
   footer h3 {
-    font-size:1em;
+    font-size: 1em;
     text-align: center;
-    margin-left:0;
+    margin-left: 0;
   }
+
   .pricing__box-abilities-record {
     display: block;
     width: 100%;
-    margin:0;
+    margin: 0;
     text-align: center;
     margin-bottom: 30px;
   }
+
   .pricing__box-abilities-record p {
     width: 100%;
   }
+
   header nav {
     position: fixed;
-    left:0;
+    left: 0;
     align-items: center;
-    gap:0;
+    gap: 0;
     width: 40vw;
     flex-wrap: wrap;
-    z-index:999;
-    background-color:black;
-    height: 100vh; 
-    top:0;
+    z-index: 999;
+    background-color: black;
+    height: 100vh;
+    top: 0;
     justify-content: center;
   }
+
   header nav a {
     width: 80%;
     height: 25px;
-    font-family:Exo2-ExtraBold;
-    color:white;
+    font-family: Exo2-ExtraBold;
+    color: white;
   }
+
   .news__records {
     overflow-y: hidden;
     flex-wrap: wrap;
     height: 460px;
 
   }
+
   .nav-btn {
-    display:block;
+    display: block;
   }
+
   .wallet-app .benefit-box {
     width: 60vw;
-    display:block;
-    margin:auto;
+    display: block;
+    margin: auto;
     height: 500px;
   }
+
   .wallet-app .benefit-box h1 {
     height: 50px;
   }
+
   .news__records .news__box {
     width: 60vw;
-    display:block;
+    display: block;
     margin: auto;
   }
+
   .news__records .news__box {
     height: 400px;
-    margin-block:30px;
-    scroll-margin-block:30px;
+    margin-block: 30px;
+    scroll-margin-block: 30px;
   }
+
   .news-heading p {
-    font-size:1.4em;
+    font-size: 1.4em;
   }
+
   .news__box h2 {
-    font-size:1.5em;
+    font-size: 1.5em;
   }
+
   .news .news__box p {
-    font-size:1em;
+    font-size: 1em;
   }
+
   .news__records .news__box:last-of-type {
-    display:block;
+    display: block;
   }
+
   .section-heading {
-    margin-block:100px;
+    margin-block: 100px;
   }
+
   .chart-block-section {
-    margin-top:0;
+    margin-top: 0;
   }
+
   .hero__left-block .hero__heading {
-    font-size:2em;
+    font-size: 2em;
   }
+
   .hero__left-block .hero__description {
-    font-size:1.5em;
+    font-size: 1.5em;
   }
+
   .hero__right-block img {
     width: 80vw;
   }
+
   .hero__btn {
     width: 70vw;
   }
-  
+
   .footer__links-column {
-    font-size:1em;
+    font-size: 1em;
   }
+
   .hero {
-    row-gap:30px;
+    row-gap: 30px;
   }
+
   .section-heading {
-    font-size:1.8em;
+    font-size: 1.8em;
   }
+
   .benefit-box {
     width: 80vw;
-    display:block;
+    display: block;
     margin: auto;
   }
+
   .benefit-box__description {
     width: 90%;
     padding-inline: 5%;
     font-size: 1.2em;
   }
+
   .chart-block__description-heading {
-    font-size:1.2em;
+    font-size: 1.2em;
   }
+
   .chart-block__description-description {
-    font-size:1em;
+    font-size: 1em;
   }
 }
 
 @media screen and (max-width:350px) {
   .benefit-box__description {
-    font-size:1em;
+    font-size: 1em;
   }
+
   .cta-btn {
     width: 80vw;
   }
+
   .section-heading {
-    font-size:1.3em;
+    font-size: 1.3em;
   }
+
   footer h3 {
     max-width: 80%;
     padding-inline: 10%;
   }
+
   .wallet-app .benefit-box {
     height: 450px;
     width: 80vw;
@@ -1282,110 +1631,151 @@ header nav {
 
 @media screen and (max-width:550px) {
   .video-section .section-heading {
-    margin-bottom:100px;
-    margin-top:150px;
+    margin-bottom: 100px;
+    margin-top: 150px;
+  }
+  .exchange-nav {
+    display:block;
+    padding-inline:0;
+  }
+  .blockchain-user-record {
+    display: block;
+    margin: auto;
+    margin-bottom:50px;
+    width: 80vw;
+  }
+  .blockchain-user-record h2 {
+    height: 30px;
   }
   .error-popup__reason h3 {
-    font-size:1.9em;
+    font-size: 1.9em;
   }
+
   .error-popup__reason p {
-    font-size:1.2em;
+    font-size: 1.2em;
   }
+
   .pricing__box {
-    margin-block:20px;
-    padding:0;
+    margin-block: 20px;
+    padding: 0;
     width: 70vw;
-    scroll-margin-block:20px;
+    scroll-margin-block: 20px;
   }
+
   .pricing__records {
-    height:600px;
-    margin-inline:5vw;
+    height: 600px;
+    margin-inline: 5vw;
     overflow-y: hidden;
   }
+
   .faq__record hr {
     width: 80vw;
   }
+
   .faq__record h3 {
-    font-size:1.3em;
+    font-size: 1.3em;
   }
+
   .faq__record p {
-    font-size:0.8em;
+    font-size: 0.8em;
   }
+
   .wallet-app .chart-block img {
     width: 70vw;
   }
+
   .testimonials {
     width: 75vw;
-    padding-inline:12.5%;
+    padding-inline: 12.5%;
     height: 480px;
-    overflow-y:hidden;
+    overflow-y: hidden;
   }
+
   .section-heading-description {
-    font-size:1em;
+    font-size: 1em;
   }
+
   .wallet__testimonials {
     background-position-x: left;
-    margin-top:150px;
+    margin-top: 150px;
   }
+
   .wallet__testimonial-box {
     flex-direction: column;
-  
+
   }
+
   .wallet-app .chart-block:first-of-type {
-    margin-top:100px;
+    margin-top: 100px;
   }
+
   .wallet__testimonial-box:after {
     right: 50%;
     transform: translateX(50%);
     width: 50%;
   }
+
   footer .companies-bar__logos img {
-    width: 30vw; 
+    width: 30vw;
     max-width: 50vw;
   }
+
   .move-arrows:not(.news .move-arrows) {
     display: flex;
-  } 
+  }
+
   .wallet-app .benefit-box {
     height: 450px;
   }
+
   .wallet-app .benefit-box p {
-    font-size:1.2em;
+    font-size: 1.2em;
   }
+
   .webinar {
-    background-size:100% 100%;
+    background-size: 100% 100%;
   }
+
   .companies-bar__stars img {
     width: 100px;
   }
+
   .testimonial-box {
     width: 100%;
     box-shadow: 0px 0px 5px black;
-    scroll-margin-block:20px;
-    margin-block:20px;
-  } 
-  .news__records .news__box{
+    scroll-margin-block: 20px;
+    margin-block: 20px;
+  }
+
+  .news__records .news__box {
     width: 80vw;
   }
+
   .move-arrows img {
     width: 20vw;
   }
+
   .webinar h1 {
-    font-size:1.2em;
+    font-size: 1.2em;
   }
+
   .video-section__block::after {
-    top:-60px;
+    top: -60px;
   }
+
   .video-section__block video {
     height: 250px;
   }
+
   .custom-play-btn {
     width: 100px;
     height: 100px;
   }
+
   .companies-bar__logos {
     height: fit-content;
   }
+
   .companies-bar__logos img {
     width: 35vw;
     max-width: 35vw;
