@@ -1,10 +1,14 @@
+import { motion } from "framer-motion"
+import { useState } from "react";
 
-export function FaqRecord({heading,description}) {
+export function FaqRecord(props) {
+    const [expand, setExpand] = useState(false);
     return (
-        <div className="faq__record">
-            <h3>{heading}</h3>
-            <hr/>
-            <p>{description}</p>
+        <div className="faq__record" onClick={() => setExpand(!expand)}>
+            <h3>{props.heading}</h3>
+            {expand &&
+                props.children
+            }
         </div>
     )
 }

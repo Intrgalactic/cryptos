@@ -13,9 +13,11 @@ import WalletTestimonials from "layouts/wallet-testimonials";
 import Footer from "layouts/footer";
 import Loader from "layouts/loader";
 import useLoader from "hooks/useLoader";
+import { useNavigate } from "react-router-dom";
 
 export default function Wallet({isLoading,setIsLoading}) {
     useLoader(setIsLoading);
+    const navigate = useNavigate();
     return (
         <>
             <div className="wallet-header"><Header /></div>
@@ -23,8 +25,8 @@ export default function Wallet({isLoading,setIsLoading}) {
                 <SectionHeading heading={["CHOOSE YOUR OPTION TO FLY THE SKY"]} />
                 <SectionHeadingDescription description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
                 <BenefitsSection>
-                    <BenefitBox image={swap} heading="SWAP CRYPTOCURRENCY" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit" alt="swap cryptocurrency" btnText="swap" />
-                    <BenefitBox image={launchpad} heading="DOUBLE YOUR FUNDS WITH LAUNCHPAD" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit" alt="cryptocurrency launchpad" btnText="redirect" />
+                    <BenefitBox image={swap} heading="SWAP CRYPTOCURRENCY" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit" alt="swap cryptocurrency" btnText="swap" action={() => {navigate('/exchange')}}/>
+                    <BenefitBox image={launchpad} heading="DOUBLE YOUR FUNDS WITH LAUNCHPAD" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit" alt="cryptocurrency launchpad" btnText="redirect"/>
                     <BenefitBox image={apy} heading="STAKE CRYPTOCURRENCY" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit" alt="cryptocurrency stake" btnText="stake" />
                 </BenefitsSection>
                 <SectionHeading heading={["HAVE ANY DOUBTS WHAT OPTION IS THE BEST FOR YOU?"]} />

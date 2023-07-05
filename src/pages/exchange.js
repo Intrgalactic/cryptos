@@ -4,7 +4,7 @@ import "@uniswap/widgets/fonts.css";
 import { CtaBtn } from "components/cta-btn";
 import { ethers } from "ethers";
 import ExchangeNav from "layouts/exchange-nav";
-import SwapWidgets from "layouts/swap-widgets";
+import { SwapWidgets } from "layouts/swap-widgets";
 import Loader from "layouts/loader";
 import useLoader from "hooks/useLoader";
 import { useEffect, useState, useReducer, useRef } from "react";
@@ -17,6 +17,8 @@ import { BlockchainUserRecord } from "components/blockchain-record";
 import { SectionHeading } from "components/section-heading";
 import { setup1inchWidget } from "@1inch/embedded-widget";
 import Footer from "layouts/footer";
+import { MoveArrows } from "components/move-arrows";
+import useLocalStorage from "hooks/useSessionStorage";
 
 export default function Exchange({ isLoading, setIsLoading }) {
     const initialErrState = {
@@ -35,7 +37,7 @@ export default function Exchange({ isLoading, setIsLoading }) {
     const [isProviderMissing, setIsProviderMissing] = useState();
     const [error, dispatch] = useReducer(errorReducer, initialErrState);
     const oneInchSwapWidgetRef = useRef();
-
+    const swapWidgetsRef = useRef();
     useEffect(() => {
         try {
             new Promise(async (resolve, reject) => {
@@ -65,9 +67,9 @@ export default function Exchange({ isLoading, setIsLoading }) {
                 }
                 else {
                     setIsProviderMissing(true);
-                    dispatch({type: "missing provider"});
+                    dispatch({ type: "missing provider" });
                 }
-               
+
                 setTimeout(() => {
                     resolve(true);
                 }, 1000);
@@ -124,6 +126,7 @@ export default function Exchange({ isLoading, setIsLoading }) {
                 getBalance(accounts);
             }
             else {
+                console.log(55);
                 setSessionStorageItem('delete', "eth_accounts");
                 setAccounts(null);
             }
@@ -179,7 +182,7 @@ export default function Exchange({ isLoading, setIsLoading }) {
                             }
                             {accounts === null && <CtaBtn btnText="connect" action={connectWallet} />}
                         </ExchangeNav>
-                        <SwapWidgets>
+                        <SwapWidgets ref={swapWidgetsRef}>
                             <SwapWidgetBox>
                                 {accounts !== null && <SwapWidget hideConnectionUI={true} width="20vw" />}
                                 {accounts === null &&
@@ -188,19 +191,20 @@ export default function Exchange({ isLoading, setIsLoading }) {
                                     </LockedBox>}
                             </SwapWidgetBox>
                             <SwapWidgetBox ref={oneInchSwapWidgetRef}>
-                                {accounts === null &&
+                                {accounts === null ?
                                     <LockedBox>
                                         <CtaBtn btnText="connect" action={connectWallet} />
-                                    </LockedBox>}
+                                    </LockedBox> : null}
                             </SwapWidgetBox>
                         </SwapWidgets>
+                        <MoveArrows ref={swapWidgetsRef} />
                     </>
                 }
             </div>
             {isProviderMissing || error.isError ?
                 <ErrorPopup errReason={error.errorReason} errDescription={error.errorDescription} /> : null
             }
-            <Footer/>
+            <Footer />
             {isLoading &&
                 <Loader />}
 

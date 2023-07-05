@@ -5,6 +5,7 @@ import Pricing from 'pages/pricing';
 import Exchange from 'pages/exchange';
 import Wallet from 'pages/wallet';
 import { useState } from 'react';
+import SignIn from 'pages/sign-in';
 
 function App() {
   const [isLoading,setIsLoading] = useState(true);
@@ -15,6 +16,7 @@ function App() {
         <Route path="/pricing" exact element={<Pricing  isLoading={isLoading} setIsLoading={setIsLoading}/>}></Route>
         <Route path="/exchange" exact element={<Exchange  isLoading={isLoading} setIsLoading={setIsLoading}/>}></Route>
         <Route path="/wallet" exact element={<Wallet  isLoading={isLoading} setIsLoading={setIsLoading}/>}></Route>
+        <Route path="/sign-in" exact element={<SignIn/>}/>
       </Routes>
     </div>
   );

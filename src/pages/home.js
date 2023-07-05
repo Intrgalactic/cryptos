@@ -16,6 +16,7 @@ import { CtaBtn } from "components/cta-btn";
 import { SectionHeading } from "components/section-heading";
 import Loader from "layouts/loader";
 import useLoader from "hooks/useLoader";
+import Incentive from "layouts/callout";
 export const animateVariant = {
     visible: {
         opacity: 1,
@@ -30,7 +31,7 @@ export const animateVariant = {
     },
 
 }
-export default function Home({isLoading,setIsLoading}) {
+export default function Home({ isLoading, setIsLoading }) {
     useLoader(setIsLoading);
     return (
         <>
@@ -47,7 +48,10 @@ export default function Home({isLoading,setIsLoading}) {
             <VideoSection />
             <Testimonials />
             <CompaniesBar />
-            <Webinar />
+            <Incentive>
+                <h1>SIGN UP TO OUR FREE WEBINAR <br />ABOUT CRYPTOCURRENCY WORLD</h1>
+                <CtaBtn btnText="sign up" />
+            </Incentive>
             <News />
             <Footer />
             {isLoading &&

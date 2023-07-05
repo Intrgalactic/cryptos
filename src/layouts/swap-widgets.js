@@ -1,8 +1,11 @@
+import { forwardRef } from "react"
 
-export default function SwapWidgets({children}) {
+function SwapWidgetsBox(props,ref) {
     return (
-        <div className="swap-widgets">
-            {children}
+        <div className="swap-widgets" ref={ref}>
+            {props.children}
         </div>
     )
 }
+
+export const SwapWidgets = forwardRef(SwapWidgetsBox);

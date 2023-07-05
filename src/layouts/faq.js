@@ -1,16 +1,17 @@
 import { FaqRecord } from "components/faq-record";
 import { SectionHeading } from "components/section-heading";
-
-export default function Faq() {
+import { SectionHeadingDescription } from "components/section-heading-description";
+import { motion } from "framer-motion";
+export default function Faq(props) {
     return (
         <>
-        <SectionHeading heading={["frequently asked questions",<br/>,"about subscription"]}/>
-        <section className="faq">
-            <FaqRecord heading="Lorem ipsum dolor sit amet, consectetur adipiscing elit?" description="It is a long established fact that a reader will be distracted by the readable content"/>
-            <FaqRecord heading="Lorem ipsum dolor sit amet, consectetur adipiscing elit?" description="It is a long established fact that a reader will be distracted by the readable content"/>
-            <FaqRecord heading="Lorem ipsum dolor sit amet, consectetur adipiscing elit?" description="It is a long established fact that a reader will be distracted by the readable content"/>
-            <FaqRecord heading="Lorem ipsum dolor sit amet, consectetur adipiscing elit?" description="It is a long established fact that a reader will be distracted by the readable content"/>
-        </section>
+            <section className={`faq ${props.class}`}>
+                <div className="faq__left-block">
+                    <SectionHeading heading={props.heading} />
+                    {props.description && <SectionHeadingDescription description={props.description}/>}
+                </div>
+                {props.children}
+            </section>
         </>
     )
 }
