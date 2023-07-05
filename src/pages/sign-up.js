@@ -6,7 +6,7 @@ import Faq from "layouts/faq";
 import { FaqRecord } from "components/faq-record";
 import { motion } from "framer-motion";
 import Footer from "layouts/footer";
-export default function SignIn() {
+export default function SignUp() {
     return (
         <>
             <Header />
