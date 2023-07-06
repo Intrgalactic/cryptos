@@ -955,7 +955,13 @@ footer h3 {
   font-family: Roboto-Bold;
   font-size: 1.5em;
 }
-
+.register__form-err {
+  font-family:Roboto-Bold;
+  color:red;
+  font-size:1.2em;
+  width: 80%;
+  padding-inline:10%;
+}
 .faq__record hr {
   border-width: 2px;
   border-color: black;
@@ -1999,6 +2005,7 @@ header nav {
     margin-bottom: 100px;
     margin-top: 150px;
   }
+  
   .register-app .faq {
     background-image: none;
     background-color:#7000ff;
@@ -2010,7 +2017,7 @@ header nav {
     padding-inline: 5%;
   }
   .register__form {
-    height: fit-content;
+    height: 580px;
     padding-bottom:100px;
     width: 80vw;
 
