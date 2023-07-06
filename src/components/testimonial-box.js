@@ -1,4 +1,4 @@
-import testimonialUser from 'assets/images/testimonial-user-image.png';
+import testimonialUser from 'assets/images/testimonial-user-image.jpg';
 import stars from 'assets/images/stars.png';
 
 export function TestimonialBox({name,lastname,description}) {

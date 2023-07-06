@@ -170,7 +170,7 @@ header nav a {
 }
 
 .hero__highlighted {
-  background-image: url('assets/images/text-highlight.png');
+  background-image: url('assets/images/text-highlight.jpg');
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -295,7 +295,7 @@ header nav a {
 }
 
 .benefit-box {
-  background-image: url('assets/images/benefit-box-bg.png');
+  background-image: url('assets/images/benefit-box-bg.jpg');
   background-size: cover;
   width: 20vw;
   border-radius: 20px;
@@ -363,7 +363,7 @@ video,
   left: -15vw;
   content: '';
   width: 105vw;
-  background-image: url('assets/images/equities-chart-bg.png');
+  background-image: url('assets/images/equities-chart-bg.jpg');
   background-size: cover;
   background-repeat: repeat;
   filter: blur(4px);
@@ -371,7 +371,7 @@ video,
 }
 
 .chart-block:last-of-type:after {
-  background-image: url('assets/images/investment-chart-bg.png');
+  background-image: url('assets/images/investment-chart-bg.jpg');
 }
 
 .chart-block__description-heading {
@@ -411,7 +411,7 @@ video,
 }
 
 video {
-  background-image: url('assets/images/video-bg.png');
+  background-image: url('assets/images/video-bg.jpg');
   background-size: 100% 100%;
   width: 50vw;
   height: 600px;
@@ -419,7 +419,7 @@ video {
 }
 
 .video-section {
-  background-image: url('assets/images/video-block-bg.png');
+  background-image: url('assets/images/video-block-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   padding-block: 50px;
@@ -464,7 +464,7 @@ video {
   width: 15vw;
   padding: 20px;
   height: 400px;
-  background-image: url('assets/images/testimonial-box-bg.png');
+  background-image: url('assets/images/testimonial-box-bg.jpg');
   background-size: cover;
   border-radius: 50px;
   box-shadow: 0px 4px 20px black;
@@ -626,7 +626,7 @@ video {
   display: flex;
   justify-content: space-evenly;
   color: white;
-  background-image: url('assets/images/webinar-bg.png');
+  background-image: url('assets/images/webinar-bg.jpg');
   height: 300px;
   align-items: center;
   margin-top: 150px;
@@ -669,7 +669,7 @@ video {
   width: 30vw;
   text-align: center;
   border-radius: 25px;
-  background-image: url('assets/images/news-bg.png');
+  background-image: url('assets/images/news-bg.jpg');
   height: 500px;
   text-align: left;
   color: white;
@@ -799,7 +799,7 @@ footer h3 {
 .pricing {
   margin-top: 50px;
   background-color: #9c9c9c;
-  background-image:url('assets/images/pricing-bg.png');
+  background-image:url('assets/images/pricing-bg.jpg');
   background-size: cover;
   padding-block:100px;
 }
@@ -834,7 +834,7 @@ footer h3 {
     -1px 0px 1px #000,
     1px 0px 1px grey,
     2px 2px 1px #000,
-    -2px 2px 15px #000,
+    -2px 2px 1px #000,
     2px -2px 1px #000,
     -2px -2px 1px grey,
     0px 2px 1px #000,
@@ -843,7 +843,7 @@ footer h3 {
     2px 0px 1px #000,
     1px 2px 1px #000,
     -1px 2px 1px #000,
-    1px -2px 15px #000,
+    1px -2px 1px #000,
     -1px -2px 1px #000,
     2px 1px 1px #000,
     -2px 1px 1px grey,
@@ -854,7 +854,7 @@ footer h3 {
 .pricing__box {
   padding: 30px;
   width: 20vw;
-  background-image: url('./assets/images/pricing-box-bg.png');
+  background-image: url('./assets/images/pricing-box-bg.jpg');
   background-size: cover;
   z-index: 1;
   border-radius: 30px;
@@ -947,7 +947,7 @@ footer h3 {
 }
 
 .wallet-header {
-  background-image: url('assets/images/header-bg.PNG');
+  background-image: url('assets/images/header-bg.jpg');
   margin-inline: 0;
   width: 100vw;
   backdrop-filter: blur(5px);
@@ -970,7 +970,7 @@ footer h3 {
   top: 0px;
   width: 100vw;
   height: 100%;
-  background-image: url('assets/images/wallet-bg.png');
+  background-image: url('assets/images/wallet-bg.jpg');
   position: absolute;
   z-index: 0;
   background-size: cover;
@@ -1029,7 +1029,7 @@ footer h3 {
 }
 
 .wallet__testimonials {
-  background-image: url('assets/images/wallet-testimonial-bg.png');
+  background-image: url('assets/images/wallet-testimonial-bg.jpg');
   background-position: center;
   background-size: 100% calc(100% - (288px + 283px));
   background-repeat: no-repeat;
@@ -1206,7 +1206,7 @@ header nav {
 .register-app .faq {
   margin-top:0;
   align-items: center;
-  background-image:url('assets/images/register-faq-bg.png');
+  background-image:url('assets/images/register-faq-bg.jpg');
   background-size: 100% 100%;
   background-position-x: right;
   background-attachment: fixed;
@@ -1230,7 +1230,7 @@ header nav {
 }
 .register-app .faq__record {
   text-shadow: 0px 4px 4px black;
-  background-image:url('assets/images/faq-record-bg.png');
+  background-image:url('assets/images/faq-record-bg.jpg');
   background-size: cover;
   border-radius: 50px;
 
@@ -1263,14 +1263,14 @@ header nav {
   display:flex;
   align-items: center;
   justify-content: space-between;
-  background-image:url('assets/images/register-section-bg.png');
+  background-image:url('assets/images/register-section-bg.jpg');
   background-size: cover;
   padding-block:50px;
   padding-inline:5%;
   height: 1000px;
 }
 .register__incentive {
-  background-image: url('assets/images/register-incentive-bg.png');
+  background-image: url('assets/images/register-incentive-bg.jpg');
   background-size:cover;
   justify-content: flex-end;
   padding-inline:10%;
@@ -2058,7 +2058,7 @@ header nav {
   }
 
   .pricing__records {
-    height: 650px;
+    height: 670px;
     margin-inline: 5vw;
     overflow-y: hidden;
   }

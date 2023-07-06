@@ -1,7 +1,7 @@
 import { NewsBox } from "components/news-box";
 import { SectionHeading } from "components/section-heading";
-import firstNewsImage from 'assets/images/news-example-image.png';
-import secondNewsImage from 'assets/images/second_news-example-image.png';
+import firstNewsImage from 'assets/images/news-example-image.jpg';
+import secondNewsImage from 'assets/images/second_news-example-image.jpg';
 import { MoveArrows } from "components/move-arrows";
 import { useRef } from "react";
 

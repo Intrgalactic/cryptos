@@ -1,4 +1,3 @@
-import video from 'assets/images/video.mp4';
 
 export function VideoBlock() {
     return (

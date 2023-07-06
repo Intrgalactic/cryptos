@@ -1,7 +1,7 @@
 import { ChartBlock } from "components/chart-block"
 import { SectionHeading } from "components/section-heading"
-import equitiesPricesChart from 'assets/images/equitites_prices_chart.png';
-import percentOfInvestmentsChart from 'assets/images/percent-of-investments-chart.png';
+import equitiesPricesChart from 'assets/images/equitites_prices_chart.jpg';
+import percentOfInvestmentsChart from 'assets/images/percent-of-investments-chart.jpg';
 import { motion } from "framer-motion";
 export default function ChartSection() {
     return (
