@@ -17,6 +17,7 @@ import { SectionHeading } from "components/section-heading";
 import Loader from "layouts/loader";
 import useLoader from "hooks/useLoader";
 import Incentive from "layouts/callout";
+import { CustomBtn } from "components/custom-btn";
 export const animateVariant = {
     visible: {
         opacity: 1,

@@ -538,7 +538,90 @@ video {
 .companies-bar__stars img {
   width: 200px;
 }
+.custom-btn {
+  width: 200px;
+  display: block;
+  margin:auto;
+  height: 10px;
+  padding:20px;
+  position: relative;
+  border-radius:40px;
+  border-top:1px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(0,0,0,0.4);
+  transition-duration: 200ms;
+}
 
+.custom-btn:before {
+  width: 25%;
+  position:absolute;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index:-1;
+  background-color: #d100ff;
+  content:'';
+  height: 10px;
+  left:50%;
+  transform: translateX(-50%);
+  top:-10px;
+  transition-duration: 200ms;
+  box-shadow: 0px 0px 30px #d100ff;
+}
+.custom-btn:after {
+  width: 25%;
+  position:absolute;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index:-1;
+  background-color: #d100ff;
+  content:'';
+  height: 10px;
+  left:50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  transition-duration: 200ms;
+  box-shadow: 0px 0px 30px #d100ff;
+}
+.custom-btn:hover:before,.custom-btn:hover:after  {
+  width: 80%;
+  border-radius: 0px;
+  filter:blur(10px);
+  height: 37px;
+}
+
+.custom-btn a:after {
+  content:'';
+  width: 50%;
+  background-image: linear-gradient(to left,rgba(255,255,255,0.2),transparent);
+  transform: skewX(45deg);
+  position: absolute;
+  height: 100%;
+  left:0;
+  
+  left:0;
+  z-index:-1;
+  top:0;
+  transition: 200ms;
+}
+.custom-btn a:hover:after {
+  border-radius: 20px;
+  transform: skewX(0deg) translate(100%);
+}
+.custom-btn a {
+  color:white;
+  text-decoration: none;
+  z-index:2;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  left:0;
+  top:0;
+  height: 100%;
+  font-size:1.3em;
+  text-transform: uppercase;
+  font-family:Exo2-ExtraBold;
+}
 .incentive {
   display: flex;
   justify-content: space-evenly;
@@ -715,6 +798,10 @@ footer h3 {
 
 .pricing {
   margin-top: 50px;
+  background-color: #9c9c9c;
+  background-image:url('assets/images/pricing-bg.png');
+  background-size: cover;
+  padding-block:100px;
 }
 
 .pricing__records {
@@ -728,7 +815,6 @@ footer h3 {
   max-width: 80%;
   height: 200px;
 }
-
 .pricing__subscription-type {
   font-family: Exo2-ExtraBold;
   color: white;
@@ -770,9 +856,9 @@ footer h3 {
   width: 20vw;
   background-image: url('./assets/images/pricing-box-bg.png');
   background-size: cover;
-  
+  z-index: 1;
   border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  box-shadow:0px 5px 20px white;
 }
 
 .pricing__box-abilities {
@@ -790,7 +876,7 @@ footer h3 {
 }
 
 .pricing__box-abilities-record img {
-  filter: drop-shadow(-1px -1px 4px black) hue-rotate(-45deg);
+  filter: drop-shadow(-1px -1px 4px black) hue-rotate(45deg);
 }
 
 .pricing__box-abilities-record P {
@@ -821,18 +907,33 @@ footer h3 {
 .pricing-app .section-heading {
   margin-bottom: 0;
 }
-
+.pricing-faq,.pricing-app .footer-shape {
+  background-color: #E9E7E7;
+}
+.pricing-app .footer-shape {
+  margin-top:0;
+}
 .faq {
   margin-top: 100px;
   width: 80vw;
   padding-inline: 10%;
 }
-
+.pricing-faq {
+  margin-top:0;
+}
+.faq__record:hover {
+  cursor: pointer;
+}
 .faq__record h3 {
   font-family: Exo2-ExtraBold;
   font-size: 2em;
 }
-
+.pricing-app .faq {
+  padding-block:100px;
+}
+.pricing-app .faq__record h3:last-of-type {
+  margin-bottom: 0;
+}
 .faq__record p {
   font-family: Roboto-Bold;
   font-size: 1.5em;
@@ -942,7 +1043,9 @@ footer h3 {
   width: 30vw;
   text-align: left;
 }
-
+.faq__left-block .section-heading {
+  margin-top:0px;
+}
 .wallet__testimonial-box {
   margin-bottom: 50px;
   padding: 50px;
@@ -1102,16 +1205,15 @@ header nav {
 }   
 .register-app .faq {
   margin-top:0;
+  align-items: center;
   background-image:url('assets/images/register-faq-bg.png');
   background-size: 100% 100%;
   background-position-x: right;
   background-attachment: fixed;
   display:flex;
   height: 1000px;
- 
   padding-inline:10%;
   color:white;
-  align-items: baseline;
   justify-content: space-around;
 }
 .register-app .faq .section-heading {
@@ -1296,6 +1398,9 @@ header nav {
 @media screen and (max-width:1550px) and (min-width:1024px) {
   .pricing__box {
     width: 30vw;
+  }
+  .register-app .faq {
+    background-size: 150% 100%;
   }
   .register__left-block,.register__form{
     margin:auto;
@@ -1685,10 +1790,9 @@ header nav {
     width: 50vw;
   }
 
-  .pricing__box .cta-btn {
-    margin-top: 0px;
+  .pricing__box .custom-btn {
     width: 50%;
-    height: 50px;
+    height:10px;
     margin-top: 50px;
   }
 
@@ -1868,6 +1972,9 @@ header nav {
     margin-bottom: 100px;
     margin-top: 150px;
   }
+  .register-app .incentive {
+    background-size: 300% 100%;
+  }
   .register__section {
     padding-inline: 5%;
   }
@@ -1943,14 +2050,15 @@ header nav {
     height: 300px;
   }
   .pricing__box {
-    margin-block: 20px;
-    padding: 0;
-    width: 90vw;
-    scroll-margin-block: 20px;
+    margin-block: 50px;
+    padding-block:50px;
+    width: 60vw;
+    height: 500px;
+    scroll-margin-block:30px;
   }
 
   .pricing__records {
-    height: 600px;
+    height: 650px;
     margin-inline: 5vw;
     overflow-y: hidden;
   }

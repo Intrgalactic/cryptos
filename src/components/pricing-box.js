@@ -1,6 +1,7 @@
 
 import check from 'assets/images/checkbox.png';
 import { CtaBtn } from './cta-btn';
+import { CustomBtn } from './custom-btn';
 
 export function PricingBox({ image, alt, abilities, type }) {
     return (
@@ -15,7 +16,7 @@ export function PricingBox({ image, alt, abilities, type }) {
                     </div>
                 ))}
             </div>
-            <CtaBtn btnText="buy" />
+            <CustomBtn btnText="buy" redirect="/buy" />
         </div>
     )
 }

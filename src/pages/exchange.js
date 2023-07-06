@@ -139,7 +139,7 @@ export default function Exchange({ isLoading, setIsLoading }) {
         try {
             var balance = await provider.getBalance(accounts[0]);
             balance = ethers.utils.formatEther(balance);
-            console.log(balance);
+            balance = parseFloat(balance).toFixed(4);
             setAccounts({
                 ...accounts,
                 balance: balance

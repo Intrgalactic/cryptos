@@ -12,7 +12,7 @@ export default function Pricing({isLoading,setIsLoading}) {
         <div className="pricing-app">
             <Header/>
             <PricingSection/>
-            <Faq heading={["frequently asked questions", <br />, "about subscription"]}>
+            <Faq heading={["frequently asked questions", <br />, "about subscription"]} class="pricing-faq">
             <FaqRecord heading="Lorem ipsum dolor sit amet, consectetur adipiscing elit?">
                     <>
                         <hr />
