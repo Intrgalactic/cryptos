@@ -12,7 +12,6 @@ export default function PricingSection() {
     return (
         <>
             <SectionHeading heading={["don't hestitate while you can earn"]} />
-            <SectionHeadingDescription description="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
             <section className="pricing">
                 <div className="pricing__records" ref={pricingRef}>
                     <PricingBox image={basic} alt="basic package" abilities={["ACCESS TO MARKET", "LEVERAGE ACCESS", "BASIC CHARTS"]} type="basic" />
