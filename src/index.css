@@ -155,7 +155,7 @@ header nav a {
 }
 
 .hero__left-block {
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25);
 }
 
 .hero__right-block {
@@ -341,10 +341,6 @@ header nav a {
   flex-direction: row-reverse;
 }
 
-.chart-block img {
-  order: 2;
-}
-
 h1,
 p,
 img,
@@ -382,7 +378,7 @@ video,
 
 .chart-block__description {
   text-align: left;
-  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.4);
 }
 
 .chart-block img {
@@ -1351,6 +1347,9 @@ header nav {
   width: 80%;
   padding-inline: 10%;
   font-family:Roboto-Bold;
+  display:flex;
+  align-items: center;
+
 }
 .register__form form input[type="checkbox"] {
   width: 48px;
@@ -1362,9 +1361,7 @@ header nav {
   height: 80px;
   background-color: #DC03FF;
 }
-.register__form form label:first-of-type {
-  display: flex;
-}
+
 
 @media screen and (max-width:1550px) {
   .wallet-app .benefit-box {
@@ -2019,7 +2016,7 @@ header nav {
   .register__form {
     height: 580px;
     padding-bottom:100px;
-    width: 80vw;
+    width: 90vw;
 
   }
   .faq__left-block .section-heading {
@@ -2034,7 +2031,9 @@ header nav {
   }
 
   .register__form form input:not(.register__form form input[type="checkbox"]){
-    flex-basis: 40%;
+    width: 80%;
+    display:block;
+    margin: auto;
     font-size:1em;
   }
   .register__form form label {
