@@ -155,7 +155,7 @@ header nav a {
 }
 
 .hero__left-block {
-  text-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
 }
 
 .hero__right-block {
@@ -174,6 +174,7 @@ header nav a {
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
+  text-shadow: none;
 }
 
 .hero__description {
@@ -378,7 +379,7 @@ video,
 
 .chart-block__description {
   text-align: left;
-  text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.4);
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .chart-block img {
